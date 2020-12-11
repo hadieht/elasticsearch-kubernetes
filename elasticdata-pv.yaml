@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name:  elasticdata-pv
+  labels:
+    type: elasticdata
+spec:
+  storageClassName: ""
+  capacity:
+    storage: 5Gi
+  accessModes:
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy:
+    Retain
+  mountOptions:
+    - nolock
+  hostPath:
+    path: /mnt/elasticdata/data

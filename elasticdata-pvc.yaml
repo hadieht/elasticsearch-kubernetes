@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: elasticdata-pvc
+spec:
+  accessModes:
+  - ReadWriteMany
+  storageClassName: ""
+  resources:
+     requests:
+       storage: 5Gi
+  selector:
+    matchLabels:
+      type: elasticdata
